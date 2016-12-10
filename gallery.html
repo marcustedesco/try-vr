@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>360&deg; Image Gallery</title>
+    <meta name="description" content="360&deg; Image Gallery - A-Frame">
+    <script src="https://rawgit.com/aframevr/aframe/917c06889ee1f3f79b7b1bbd9eab9815f9512503/dist/aframe.min.js"></script>
+    <script src="https://npmcdn.com/aframe-animation-component@3.0.1"></script>
+    <script src="https://npmcdn.com/aframe-event-set-component@3.0.1"></script>
+    <script src="https://npmcdn.com/aframe-layout-component@3.0.1"></script>
+    <script src="https://npmcdn.com/aframe-template-component@3.0.1"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/nunjucks/2.3.0/nunjucks.min.js">
+    <script src="components/set-image.js"></script>
+    <script src="components/update-raycaster.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-assets>
+        <div id="photo-assets"></div>
+        <script type="text/javascript">
+          //NOTE
+          //need to make an API for serverside. use node.js
+          // $.ajax({
+          //     url: "/uploads/",
+          //     success: function (data) {
+          //         var image_count = $(data).length();  
+          //         console.log("image_count: " + image_count);   
+          //     }
+          // });
+
+          for(var i=10; i<=11; i++){
+              // var tmp_str = ""
+              // tmp_str=  tmp_str +  
+              // "<img id=\"" + i + " \" crossorigin=\"anonymous\" src=\"uploads/" + i + ".JPG\">" + 
+              // "<img id=\"" + i + "-thumb\" crossorigin=\"anonymous\" src=\"uploads/" + i + ".JPG\">"
+              document.getElementById('photo-assets').innerHTML = 
+              "<img id=\"" + i + " \" crossorigin=\"anonymous\" src=\"uploads/" + i + ".JPG\">" +
+              "<img id=\"" + i + "-thumb\" crossorigin=\"anonymous\" src=\"uploads/" + i + ".JPG\">";
+          }
+        </script>
+
+        <!-- <img id="teton" crossorigin="anonymous" src="uploads/IMG_1623.JPG">
+        <img id="tahoe" crossorigin="anonymous" src="uploads/IMG_1624.JPG">
+        <img id="texas" crossorigin="anonymous" src="uploads/IMG_1628.JPG">
+        <img id="joshua" crossorigin="anonymous" src="uploads/IMG_1629.JPG">
+        
+        <img id="teton-thumb" crossorigin="anonymous" src="uploads/IMG_1623.JPG">
+        <img id="tahoe-thumb" crossorigin="anonymous" src="uploads/IMG_1624.JPG">
+        <img id="texas-thumb" crossorigin="anonymous" src="uploads/IMG_1628.JPG">
+        <img id="joshua-thumb" crossorigin="anonymous" src="uploads/IMG_1629.JPG"> -->
+        
+        <audio id="click-sound" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio>
+
+        <!-- Image link template to be reused. -->
+        <script id="link" type="text/nunjucks">
+          <a-plane class="link" height="1" width="1"
+            material="shader: flat; src: {{ thumb }}"
+            event-set__1="_event: mousedown; scale: 1 1 1"
+            event-set__2="_event: mouseup; scale: 1.2 1.2 1"
+            event-set__3="_event: mouseenter; scale: 1.2 1.2 1"
+            event-set__4="_event: mouseleave; scale: 1 1 1"
+            set-image="on: click; target: #image-360; src: {{ src }}"
+            sound="on: click; src: #click-sound"
+            update-raycaster="#cursor"></a-plane>
+        </script>
+      </a-assets>
+
+      <!-- 360-degree image. -->
+      <a-sky id="image-360" radius="10" src="#10"></a-sky>
+
+      <!-- Image links. -->
+      <a-entity id="links" layout="type: line; margin: 1.5" position="-2 -1 -4">
+        <div id="photo-entity"></div>
+        <script type="text/javascript">
+          for(var i=10; i<=11; i++){
+            document.getElementById('photo-entity').innerHTML = "<a-entity template=\"src: #link\" data-src=\"#" + i + "\" data-thumb=\"#" + i + "-thumb\"></a-entity>";
+          }
+        </script>
+
+       <!--  <a-entity template="src: #link" data-src="#teton" data-thumb="#teton-thumb"></a-entity>
+        <a-entity template="src: #link" data-src="#tahoe" data-thumb="#tahoe-thumb"></a-entity>
+        <a-entity template="src: #link" data-src="#texas" data-thumb="#texas-thumb"></a-entity>
+        <a-entity template="src: #link" data-src="#joshua" data-thumb="#joshua-thumb"></a-entity> -->
+      </a-entity>
+
+      <!-- Camera + cursor. -->
+      <a-entity camera look-controls>
+        <a-cursor id="cursor"
+          animation__click="property: scale; startEvents: click; from: 0.1 0.1 0.1; to: 1 1 1; dur: 150"
+          animation__fusing="property: fusing; startEvents: fusing; from: 1 1 1; to: 0.1 0.1 0.1; dur: 1500"
+          event-set__1="_event: mouseenter; color: springgreen"
+          event-set__2="_event: mouseleave; color: black"
+          raycaster="objects: .link"></a-cursor>
+      </a-entity>
+    </a-scene>
+  </body>
+</html>
