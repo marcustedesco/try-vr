@@ -16,30 +16,7 @@
   <body>
     <a-scene>
       <a-assets>
-        <div id="photo-assets"></div>
-        <script type="text/javascript">
-          //NOTE
-          //need to make an API for serverside. use node.js
-          // $.ajax({
-          //     url: "/uploads/",
-          //     success: function (data) {
-          //         var image_count = $(data).length();  
-          //         console.log("image_count: " + image_count);   
-          //     }
-          // });
-
-          for(var i=10; i<=11; i++){
-              // var tmp_str = ""
-              // tmp_str=  tmp_str +  
-              // "<img id=\"" + i + " \" crossorigin=\"anonymous\" src=\"uploads/" + i + ".JPG\">" + 
-              // "<img id=\"" + i + "-thumb\" crossorigin=\"anonymous\" src=\"uploads/" + i + ".JPG\">"
-              document.getElementById('photo-assets').innerHTML = 
-              "<img id=\"" + i + " \" crossorigin=\"anonymous\" src=\"uploads/" + i + ".JPG\">" +
-              "<img id=\"" + i + "-thumb\" crossorigin=\"anonymous\" src=\"uploads/" + i + ".JPG\">";
-          }
-        </script>
-
-        <!-- <img id="teton" crossorigin="anonymous" src="uploads/IMG_1623.JPG">
+        <img id="teton" crossorigin="anonymous" src="uploads/IMG_1623.JPG">
         <img id="tahoe" crossorigin="anonymous" src="uploads/IMG_1624.JPG">
         <img id="texas" crossorigin="anonymous" src="uploads/IMG_1628.JPG">
         <img id="joshua" crossorigin="anonymous" src="uploads/IMG_1629.JPG">
@@ -47,7 +24,7 @@
         <img id="teton-thumb" crossorigin="anonymous" src="uploads/IMG_1623.JPG">
         <img id="tahoe-thumb" crossorigin="anonymous" src="uploads/IMG_1624.JPG">
         <img id="texas-thumb" crossorigin="anonymous" src="uploads/IMG_1628.JPG">
-        <img id="joshua-thumb" crossorigin="anonymous" src="uploads/IMG_1629.JPG"> -->
+        <img id="joshua-thumb" crossorigin="anonymous" src="uploads/IMG_1629.JPG">
         
         <audio id="click-sound" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio>
 
@@ -66,21 +43,14 @@
       </a-assets>
 
       <!-- 360-degree image. -->
-      <a-sky id="image-360" radius="10" src="#10"></a-sky>
+      <a-sky id="image-360" radius="10" src="#teton"></a-sky>
 
       <!-- Image links. -->
       <a-entity id="links" layout="type: line; margin: 1.5" position="-2 -1 -4">
-        <div id="photo-entity"></div>
-        <script type="text/javascript">
-          for(var i=10; i<=11; i++){
-            document.getElementById('photo-entity').innerHTML = "<a-entity template=\"src: #link\" data-src=\"#" + i + "\" data-thumb=\"#" + i + "-thumb\"></a-entity>";
-          }
-        </script>
-
-       <!--  <a-entity template="src: #link" data-src="#teton" data-thumb="#teton-thumb"></a-entity>
+        <a-entity template="src: #link" data-src="#teton" data-thumb="#teton-thumb"></a-entity>
         <a-entity template="src: #link" data-src="#tahoe" data-thumb="#tahoe-thumb"></a-entity>
         <a-entity template="src: #link" data-src="#texas" data-thumb="#texas-thumb"></a-entity>
-        <a-entity template="src: #link" data-src="#joshua" data-thumb="#joshua-thumb"></a-entity> -->
+        <a-entity template="src: #link" data-src="#joshua" data-thumb="#joshua-thumb"></a-entity>
       </a-entity>
 
       <!-- Camera + cursor. -->
