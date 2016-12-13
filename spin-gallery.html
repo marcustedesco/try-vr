@@ -1,0 +1,293 @@
+<!-- Adapted from http://stampswebdesign.com/withersc/hud/index.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>World Tour</title>
+    <meta name="description" content="World Tour VR">
+    <script src="https://aframe.io/releases/latest/aframe.min.js"></script>
+    <script src="dist/aframe-no-click-look-controls.min.js"></script>
+</head>
+
+<body>
+    <a-scene>
+        <a-sky id="maphall" src="uploads/IMG_1623.JPG" rotation="0 -130 0" visible="true"></a-sky>
+        <a-sky id="woodshop" src="uploads/IMG_1624.JPG" rotation="0 -130 0" visible="false"></a-sky>
+        <a-sky id="paintingstud" src="uploads/printstud.jpg" rotation="0 -130 0" visible="false"></a-sky>
+        <a-sky id="slusser" src="uploads/IMG_1624.JPG" rotation="0 -100 0" visible="false"></a-sky>
+        <a-sky id="ipstud" src="uploads/IMG_1624.JPG" rotation="0 -80 0" visible="false"></a-sky>
+        <a-sky id="courtyard" src="uploads/IMG_1624.JPG" rotation="0 -130 0" visible="false"></a-sky>
+        <a-sky id="couches" src="uploads/IMG_1624.JPG" rotation="0 -70 0" visible="false"></a-sky>
+        <a-sky id="printstud" src="uploads/IMG_1624.JPG" rotation="0 -130 0" visible="false"></a-sky>
+        <a-sky id="duder" src="uploads/IMG_1624.JPG" rotation="0 -80 0" visible="false"></a-sky>
+
+        <a-entity camera="fov:90" position="1 1.6 3" no-click-look-controls="maxyaw:3; maxpitch:.8">
+            <a-entity cursor="fuse: true; maxDistance: 500; timeout: 200" position="0 0 -2" geometry="primitive:ring" material="color:white;shader:flat" scale=".03 .03 .03">
+            </a-entity>
+        </a-entity>
+
+
+        <!-- Stamps Logo -->
+        <!-- <a-curvedimage src="stampslogo.png" radius="5.7" theta-length="36" height="1" position="0 2.6 0" opacity="0.5">
+        <a-animation attribute="rotation" from="0 10 0" to="0 25 0" begin="500" dur="1000"></a-animation>
+      </a-curvedimage> -->
+
+
+        <!-- Map Hall Button -->
+        <a-entity rotation="0 0 0">
+            <a-curvedimage id="maphallbutton" src="uploads/printstudthumb.png" radius="5.7" theta-length="35" height=".85" position="0 0.85 0" scale=".4 .4 .4" opacity=".8">
+                <a-animation attribute="rotation" from="0 0 0" to="0 -360 0" begin="0" dur="160000" repeat="infinite" easing="linear"></a-animation>
+                <a-mouseenter target="#glow" opacity="1"></a-mouseenter>
+                <a-mouseleave target="#glow" opacity=".2"></a-mouseleave>
+            </a-curvedimage>
+
+            <a-curvedimage id="glow" src="uploads/glow.jpg" rotation="0 1.5 0" radius="5.7" theta-length="38" height="1.1" position="0 .67 0" scale=".5 .5 .5" opacity=".2">
+                <a-animation attribute="rotation" from="0 1.5 0" to="0 -358.5 0" begin="0" dur="160000" repeat="infinite" easing="linear"></a-animation>
+            </a-curvedimage>
+        </a-entity>
+
+        <!-- Wood Shop Button -->
+        <a-entity rotation="0 -40 0">
+            <a-curvedimage id="woodshopbutton" src="uploads/IMG_1627.JPG" radius="5.7" theta-length="35" height=".85" position="0 0.85 0" scale=".4 .4 .4" opacity=".8">
+                <a-animation attribute="rotation" from="0 0 0" to="0 -360 0" begin="0" dur="160000" repeat="infinite" easing="linear"></a-animation>
+                <a-mouseenter target="#glow2" opacity="1"></a-mouseenter>
+                <a-mouseleave target="#glow2" opacity=".2"></a-mouseleave>
+            </a-curvedimage>
+
+            <a-curvedimage id="glow2" src="uploads/glow.jpg" rotation="0 1.5 0" radius="5.7" theta-length="38" height="1.1" position="0 .67 0" scale=".5 .5 .5" opacity=".2">
+                <a-animation attribute="rotation" from="0 1.5 0" to="0 -358.5 0" begin="0" dur="160000" repeat="infinite" easing="linear"></a-animation>
+            </a-curvedimage>
+        </a-entity>
+
+        <!-- Painting Studio Button -->
+        <a-entity rotation="0 -80 0">
+            <a-curvedimage id="paintingstudbutton" src="uploads/IMG_1627.JPG" radius="5.7" theta-length="35" height=".85" position="0 0.85 0" scale=".4 .4 .4" opacity=".8">
+                <a-animation attribute="rotation" from="0 0 0" to="0 -360 0" begin="0" dur="160000" repeat="infinite" easing="linear"></a-animation>
+                <a-mouseenter target="#glow3" opacity="1"></a-mouseenter>
+                <a-mouseleave target="#glow3" opacity=".2"></a-mouseleave>
+            </a-curvedimage>
+
+            <a-curvedimage id="glow3" src="uploads/glow.jpg" rotation="0 1.5 0" radius="5.7" theta-length="38" height="1.1" position="0 .67 0" scale=".5 .5 .5" opacity=".2">
+                <a-animation attribute="rotation" from="0 1.5 0" to="0 -358.5 0" begin="0" dur="160000" repeat="infinite" easing="linear"></a-animation>
+            </a-curvedimage>
+        </a-entity>
+
+        <!-- Slusser Gallery Button -->
+        <a-entity rotation="0 -120 0">
+            <a-curvedimage id="slusserbutton" src="uploads/IMG_1627.JPG" radius="5.7" theta-length="35" height=".85" position="0 0.85 0" scale=".4 .4 .4" opacity=".8">
+                <a-animation attribute="rotation" from="0 0 0" to="0 -360 0" begin="0" dur="160000" repeat="infinite" easing="linear"></a-animation>
+                <a-mouseenter target="#glow4" opacity="1"></a-mouseenter>
+                <a-mouseleave target="#glow4" opacity=".2"></a-mouseleave>
+            </a-curvedimage>
+
+            <a-curvedimage id="glow4" src="uploads/glow.jpg" rotation="0 1.5 0" radius="5.7" theta-length="38" height="1.1" position="0 .67 0" scale=".5 .5 .5" opacity=".2">
+                <a-animation attribute="rotation" from="0 1.5 0" to="0 -358.5 0" begin="0" dur="160000" repeat="infinite" easing="linear"></a-animation>
+            </a-curvedimage>
+        </a-entity>
+
+        <!-- IP Studio Button -->
+        <a-entity rotation="0 -160 0">
+            <a-curvedimage id="ipstudbutton" src="uploads/IMG_1627.JPG" radius="5.7" theta-length="35" height=".85" position="0 0.85 0" scale=".4 .4 .4" opacity=".8">
+                <a-animation attribute="rotation" from="0 0 0" to="0 -360 0" begin="0" dur="160000" repeat="infinite" easing="linear"></a-animation>
+                <a-mouseenter target="#glow5" opacity="1"></a-mouseenter>
+                <a-mouseleave target="#glow5" opacity=".2"></a-mouseleave>
+            </a-curvedimage>
+
+            <a-curvedimage id="glow5" src="uploads/glow.jpg" rotation="0 1.5 0" radius="5.7" theta-length="38" height="1.1" position="0 .67 0" scale=".5 .5 .5" opacity=".2">
+                <a-animation attribute="rotation" from="0 1.5 0" to="0 -358.5 0" begin="0" dur="160000" repeat="infinite" easing="linear"></a-animation>
+            </a-curvedimage>
+        </a-entity>
+
+        <!-- Courtyard Button -->
+        <a-entity rotation="0 -200 0">
+            <a-curvedimage id="courtyardbutton" src="uploads/IMG_1627.JPG" radius="5.7" theta-length="35" height=".85" position="0 0.85 0" scale=".4 .4 .4" opacity=".8">
+                <a-animation attribute="rotation" from="0 0 0" to="0 -360 0" begin="0" dur="160000" repeat="infinite" easing="linear"></a-animation>
+                <a-mouseenter target="#glow6" opacity="1"></a-mouseenter>
+                <a-mouseleave target="#glow6" opacity=".2"></a-mouseleave>
+            </a-curvedimage>
+
+            <a-curvedimage id="glow6" src="uploads/glow.jpg" rotation="0 1.5 0" radius="5.7" theta-length="38" height="1.1" position="0 .67 0" scale=".5 .5 .5" opacity=".2">
+                <a-animation attribute="rotation" from="0 1.5 0" to="0 -358.5 0" begin="0" dur="160000" repeat="infinite" easing="linear"></a-animation>
+            </a-curvedimage>
+        </a-entity>
+
+        <!-- Couches Button -->
+        <a-entity rotation="0 -240 0">
+            <a-curvedimage id="couchesbutton" src="uploads/IMG_1627.JPG" radius="5.7" theta-length="35" height=".85" position="0 0.85 0" scale=".4 .4 .4" opacity=".8">
+                <a-animation attribute="rotation" from="0 0 0" to="0 -360 0" begin="0" dur="160000" repeat="infinite" easing="linear"></a-animation>
+                <a-mouseenter target="#glow7" opacity="1"></a-mouseenter>
+                <a-mouseleave target="#glow7" opacity=".2"></a-mouseleave>
+            </a-curvedimage>
+
+            <a-curvedimage id="glow7" src="uploads/glow.jpg" rotation="0 1.5 0" radius="5.7" theta-length="38" height="1.1" position="0 .67 0" scale=".5 .5 .5" opacity=".2">
+                <a-animation attribute="rotation" from="0 1.5 0" to="0 -358.5 0" begin="0" dur="160000" repeat="infinite" easing="linear"></a-animation>
+            </a-curvedimage>
+        </a-entity>
+
+        <!-- Print Studio Button -->
+        <a-entity rotation="0 -280 0">
+            <a-curvedimage id="printstudbutton" src="uploads/IMG_1627.JPG" radius="5.7" theta-length="35" height=".85" position="0 0.85 0" scale=".4 .4 .4" opacity=".8">
+                <a-animation attribute="rotation" from="0 0 0" to="0 -360 0" begin="0" dur="160000" repeat="infinite" easing="linear"></a-animation>
+                <a-mouseenter target="#glow8" opacity="1"></a-mouseenter>
+                <a-mouseleave target="#glow8" opacity=".2"></a-mouseleave>
+            </a-curvedimage>
+
+            <a-curvedimage id="glow8" src="uploads/glow.jpg" rotation="0 1.5 0" radius="5.7" theta-length="38" height="1.1" position="0 .67 0" scale=".5 .5 .5" opacity=".2">
+                <a-animation attribute="rotation" from="0 1.5 0" to="0 -358.5 0" begin="0" dur="160000" repeat="infinite" easing="linear"></a-animation>
+            </a-curvedimage>
+        </a-entity>
+
+        <!-- Duderstadt Gallery Button -->
+        <a-entity rotation="0 -320 0">
+            <a-curvedimage id="duderbutton" src="uploads/IMG_1628.JPG" radius="5.7" theta-length="20" height=".85" position="0 1.85 0" scale=".4 .4 .4" opacity=".8">
+                <a-animation attribute="rotation" from="0 0 0" to="0 -360 0" begin="0" dur="1600" repeat="infinite" easing="linear"></a-animation>
+                <a-mouseenter target="#glow9" opacity="1"></a-mouseenter>
+                <a-mouseleave target="#glow9" opacity=".2"></a-mouseleave>
+            </a-curvedimage>
+
+            <a-curvedimage id="glow9" src="uploads/glow.jpg" rotation="0 1.5 0" radius="5.7" theta-length="38" height="1.1" position="0 .67 0" scale=".5 .5 .5" opacity=".2">
+                <a-animation attribute="rotation" from="0 1.5 0" to="0 -358.5 0" begin="0" dur="160000" repeat="infinite" easing="linear"></a-animation>
+            </a-curvedimage>
+        </a-entity>
+
+
+        <!--
+<a-entity>
+        <a-cylinder position="0 .3 0" radius="4" height="1" side="back" open-ended="true" color="#000000" opacity=".45"></a-cylinder>
+      </a-entity>
+-->
+
+        <!--
+<a-light type="directional" color="#fff" intensity="0.2" position="-1 2 1"></a-light>
+      <a-light type="ambient" color="#fff"></a-light>
+-->
+
+    </a-scene>
+</body>
+
+<script type="text/javascript">
+document.body.style.cursor = 'none';
+</script>
+
+<script>
+var maphallsky = document.querySelector('#maphall');
+var woodshopsky = document.querySelector('#woodshop');
+var paintingstudsky = document.querySelector('#paintingstud');
+var slussersky = document.querySelector('#slusser');
+var ipstudsky = document.querySelector('#ipstud');
+var courtyardsky = document.querySelector('#courtyard');
+var couchessky = document.querySelector('#couches');
+var printstudsky = document.querySelector('#printstud');
+var dudersky = document.querySelector('#duder');
+
+document.querySelector('#maphallbutton').addEventListener('click', function() {
+    maphallsky.setAttribute('visible', 'true');
+    woodshopsky.setAttribute('visible', 'false');
+    paintingstudsky.setAttribute('visible', 'false');
+    slussersky.setAttribute('visible', 'false');
+    ipstudsky.setAttribute('visible', 'false');
+    courtyardsky.setAttribute('visible', 'false');
+    couchessky.setAttribute('visible', 'false');
+    printstudsky.setAttribute('visible', 'false');
+    dudersky.setAttribute('visible', 'false');
+});
+
+document.querySelector('#woodshopbutton').addEventListener('click', function() {
+    maphallsky.setAttribute('visible', 'false');
+    woodshopsky.setAttribute('visible', 'true');
+    paintingstudsky.setAttribute('visible', 'false');
+    slussersky.setAttribute('visible', 'false');
+    ipstudsky.setAttribute('visible', 'false');
+    courtyardsky.setAttribute('visible', 'false');
+    couchessky.setAttribute('visible', 'false');
+    printstudsky.setAttribute('visible', 'false');
+    dudersky.setAttribute('visible', 'false');
+});
+
+document.querySelector('#paintingstudbutton').addEventListener('click', function() {
+    maphallsky.setAttribute('visible', 'false');
+    woodshopsky.setAttribute('visible', 'false');
+    paintingstudsky.setAttribute('visible', 'true');
+    slussersky.setAttribute('visible', 'false');
+    ipstudsky.setAttribute('visible', 'false');
+    courtyardsky.setAttribute('visible', 'false');
+    couchessky.setAttribute('visible', 'false');
+    printstudsky.setAttribute('visible', 'false');
+    dudersky.setAttribute('visible', 'false');
+});
+
+document.querySelector('#slusserbutton').addEventListener('click', function() {
+    maphallsky.setAttribute('visible', 'false');
+    woodshopsky.setAttribute('visible', 'false');
+    paintingstudsky.setAttribute('visible', 'false');
+    slussersky.setAttribute('visible', 'true');
+    ipstudsky.setAttribute('visible', 'false');
+    courtyardsky.setAttribute('visible', 'false');
+    couchessky.setAttribute('visible', 'false');
+    printstudsky.setAttribute('visible', 'false');
+    dudersky.setAttribute('visible', 'false');
+});
+
+document.querySelector('#ipstudbutton').addEventListener('click', function() {
+    maphallsky.setAttribute('visible', 'false');
+    woodshopsky.setAttribute('visible', 'false');
+    paintingstudsky.setAttribute('visible', 'false');
+    slussersky.setAttribute('visible', 'false');
+    ipstudsky.setAttribute('visible', 'true');
+    courtyardsky.setAttribute('visible', 'false');
+    couchessky.setAttribute('visible', 'false');
+    printstudsky.setAttribute('visible', 'false');
+    dudersky.setAttribute('visible', 'false');
+});
+
+document.querySelector('#courtyardbutton').addEventListener('click', function() {
+    maphallsky.setAttribute('visible', 'false');
+    woodshopsky.setAttribute('visible', 'false');
+    paintingstudsky.setAttribute('visible', 'false');
+    slussersky.setAttribute('visible', 'false');
+    ipstudsky.setAttribute('visible', 'false');
+    courtyardsky.setAttribute('visible', 'true');
+    couchessky.setAttribute('visible', 'false');
+    printstudsky.setAttribute('visible', 'false');
+    dudersky.setAttribute('visible', 'false');
+});
+
+document.querySelector('#couchesbutton').addEventListener('click', function() {
+    maphallsky.setAttribute('visible', 'false');
+    woodshopsky.setAttribute('visible', 'false');
+    paintingstudsky.setAttribute('visible', 'false');
+    slussersky.setAttribute('visible', 'false');
+    ipstudsky.setAttribute('visible', 'false');
+    courtyardsky.setAttribute('visible', 'false');
+    couchessky.setAttribute('visible', 'true');
+    printstudsky.setAttribute('visible', 'false');
+    dudersky.setAttribute('visible', 'false');
+});
+
+document.querySelector('#printstudbutton').addEventListener('click', function() {
+    maphallsky.setAttribute('visible', 'false');
+    woodshopsky.setAttribute('visible', 'false');
+    paintingstudsky.setAttribute('visible', 'false');
+    slussersky.setAttribute('visible', 'false');
+    ipstudsky.setAttribute('visible', 'false');
+    courtyardsky.setAttribute('visible', 'false');
+    couchessky.setAttribute('visible', 'false');
+    printstudsky.setAttribute('visible', 'true');
+    dudersky.setAttribute('visible', 'false');
+});
+
+document.querySelector('#duderbutton').addEventListener('click', function() {
+    maphallsky.setAttribute('visible', 'false');
+    woodshopsky.setAttribute('visible', 'false');
+    paintingstudsky.setAttribute('visible', 'false');
+    slussersky.setAttribute('visible', 'false');
+    ipstudsky.setAttribute('visible', 'false');
+    courtyardsky.setAttribute('visible', 'false');
+    couchessky.setAttribute('visible', 'false');
+    printstudsky.setAttribute('visible', 'false');
+    dudersky.setAttribute('visible', 'true');
+});
+</script>
+
+</html>
